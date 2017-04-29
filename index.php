@@ -32,6 +32,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
@@ -100,7 +101,6 @@
 	        <button type="submit" class="btn btn-default">Pesquisar</button>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Atendimento</a></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fazer Login</a>
           <ul class="dropdown-menu" style="padding:20px; width: 300px;">
@@ -123,6 +123,7 @@
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
+	  </div>
 	</nav>
 
 
