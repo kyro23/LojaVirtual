@@ -16,6 +16,13 @@ class ComposerStaticInit79560e8e29a84cadab5ff318baf72097
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Shop\\Database\\' => 14,
+        ),
+        'A' => 
+        array (
+            'Acme\\Models\\' => 12,
+            'Acme\\Interfaces\\' => 16,
+            'Acme\\Classes\\' => 13,
         ),
     );
 
@@ -27,6 +34,22 @@ class ComposerStaticInit79560e8e29a84cadab5ff318baf72097
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'Shop\\Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Shop/Database',
+        ),
+        'Acme\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Acme/Models',
+        ),
+        'Acme\\Interfaces\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Acme/Interfaces',
+        ),
+        'Acme\\Classes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Acme/Classes',
         ),
     );
 

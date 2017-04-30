@@ -1,0 +1,15 @@
+.product{
+	background-color:white;
+	border: 1px solid #ebebeb;
+	margin:2px;
+	width: 288px;
+}
+
+#sidebar{
+	background-color:white;
+	border: 1px solid #ebebeb;
+}
+
+.listCategory{
+	list-style-type: none;
+}
