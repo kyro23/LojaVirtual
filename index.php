@@ -1,5 +1,4 @@
 <?php require 'config/config.php'; ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +9,15 @@
 	
 	<link rel="stylesheet" type="text/css" href="public/assets/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="public/assets/css/index.css">
+	<style type="text/css">
+		
+		#sidebar1{
+        	position: fixed;
+        	right:0;
+	    	margin-right: -20px;
+	    	z-index: 999999;
+		}
+	</style>
 </head>
 <body>
 <?php require "Includes/Menu.php"; ?>
@@ -89,11 +97,19 @@
 	    			<li class="listCategory"><a href="#">Walk-Talk</a></li>
 	  			</div>
 			</div>
-
-
-
         </div>
       </div><!--/row-->
+<div class="col-xs-6 col-sm-3" id="sidebar1" style="">
+        <h4>#Top 10 da semana</h4>
+          <div class="list-group">
+          <?php for($n = 0; $n <= 9; $n ++): ?>
+            <a href="#">Jogo</a>
+        <?php endfor; ?>
+
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+
 	</div>
 </body>
 </html>

@@ -94,7 +94,7 @@
 
 		}
 		public function findBy($name, $value){
-			$query = "select * from $this->table WHERE $name = $value";
+			$query = "select * from $this->table WHERE $name = '$value'";
 			$pdo = $this->database->prepare($query);
 
 
