@@ -133,7 +133,7 @@
 													]
 												);
 
-												header('Location: index.php');
+												echo"<script>location.href='index.php';</script>";
 											}else{
 												echo"<script>alert('email invalido');</script>";
 											}

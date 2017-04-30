@@ -4,12 +4,25 @@
 	use \PDO;
 
 	class Connection{
+
 		const INIFILE = './config/database.ini';
+		const inifileTWO = '.././config/database.ini';
 		private $iniData;
 
 		public function __construct(){
-			$this->iniData = parse_ini_file(self::INIFILE);
+			if(file_exists(self::INIFILE)){
+				$this->iniData = parse_ini_file(self::INIFILE);
+			}else{
+				$this->iniData = parse_ini_file(self::inifileTWO);
+			}
+			/*$inifile = './conifg/database.ini';
+			$inifileTwo = '.././config/database.ini';
 
+			if(file_exists($inifile)){
+				$this->iniData = parse_ini_file($inifile);
+			}elseif(file_exists($inifileTwo)){
+				$this->iniData = parse_ini_file($inifileTwo);
+			}*/
 		}
 
 		public function connection(){

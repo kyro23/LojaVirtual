@@ -10,7 +10,7 @@
 
 	class ShopModel implements Imodel{
 
-		private $database;
+		protected $database;
 
 		public function __construct(){
 			$database = new Connection;
