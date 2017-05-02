@@ -1,6 +1,11 @@
 <?php 
 	require 'config/config.php';
 	session_start();
+	
+	if(!isset($_SESSION['email']) && !isset($_SESSION['username'])){
+		echo"<script>location.href='index.php'; </script>";
+	}
+
 	$email = $_SESSION['email'];
 
 

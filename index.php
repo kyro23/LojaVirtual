@@ -32,15 +32,35 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Top 10</button>
           </p>
           <div class="row">
-          	<?php for($i = 0; $i<12; $i++){ ?>
+          <?php 
+          	$product = new Acme\Models\ProductModel;
+          	$system = new Acme\Classes\System;
+
+          	$products = $product->read();
+
+          	foreach($products as $product):
+
+          		$name = $product->name;
+
+          		$descriptionFull = $product->description;
+          		$descriptionCut = explode('///', $descriptionFull);
+          		$halfDescription = substr($descriptionCut[0], 0, 150);
+
+          		$priece = $product->priece;
+
+          		$idProduct = $product->id;
+          		$idProductEncode = $system->encodeString($idProduct);
+
+          ?>
             <div class="col-xs-6 col-lg-4 center product">
-              <h2>ExemploProduto</h2>
-              <img src="public/assets/img/noImgProduct.png" width="240" height="150">
-              <p>Produto tal, descrição tal, tal tal tal tal PORRA</p>
-              <p><a class="btn btn-default" href="#" role="button">Visualizar Mais... &raquo;</a></p>
+           
+              <h5><a href="product.php?id=<?php echo $idProductEncode; ?>"><?php echo $name ?> <a href=""></h5>
+              <a href="product.php?id=<?php echo $idProductEncode; ?>"> <img src="Server/productImage.php?PicNum=<?php echo $idProductEncode; ?>&img=img1" width="240" height="240"></a>
+              <p><?php echo $halfDescription; ?></p>
+              <center><p><a class="btn btn-default" href="product.php?id=<?php echo $idProductEncode; ?>" role="button">Comprar R$ <?php echo $priece; ?></a></p></center>
             </div><!--/.col-xs-6.col-lg-4-->
 
-            <?php } ?>
+      		<?php endforeach; ?>
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 

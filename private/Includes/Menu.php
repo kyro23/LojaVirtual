@@ -15,13 +15,13 @@ if (!isset($_SESSION)){
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="index.php">Loja Virtual</a>
+	      <a class="navbar-brand" href="../index.php">Loja Virtual</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="index.php">Início <span class="sr-only">(current)</span></a></li>
+	        <li ><a href="../index.php">Início</a></li>
 
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hardware <span class="caret"></span></a>
@@ -74,40 +74,7 @@ if (!isset($_SESSION)){
 	        <button type="submit" class="btn btn-default">Pesquisar</button>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
-	      <?php if(!isset($_SESSION['username'])){ ?>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fazer Login</a>
-          <ul class="dropdown-menu" style="padding:20px; width: 300px;">
-              <form class="form-signin" action="server/login.php" method="post">
-                  <h3 class="form-signin-heading">Faza Login</h3>
-                  <label for="inputEmail" class="sr-only">Endereço de e-mail</label>
-                  <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-                  <label for="inputPassword" class="sr-only">Senha</label>
-                  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="remember-me"> Lembrar de mim nas próximas sessões
-                    </label>
-                  <a href="cadastro.php">Ainda não tem uma conta? Cadastre-se já!</a>
-                  </div>
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-                </form>
-          </ul>
-          </li>
-
-	      	<?php }else{ ?>
-	      	<?php
-	      		require (__DIR__.'/../config/config.php'); 
-	      		$emailUser = $_SESSION['email'];
-	      		$userClass = new Acme\Models\UserModel;
-	      		$user = $userClass->findBy('email', $emailUser);
-	      		$typeUser = $user->type;
-
-	      	 ?>
-	      	 <?php if($typeUser == 'admin'): ?>
-	      	 	 <li><a href="private/verify.php">DashBoard</a></li>
-
-	      	 <?php endif; ?>
+  	 	 <li class="active"><a href="private/verify.php">DashBoard  <span class="sr-only">(current)</span></a></li>
   	       	<li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username']; ?><span class="caret"></span></a>
 	          <ul class="dropdown-menu">
@@ -117,11 +84,8 @@ if (!isset($_SESSION)){
 	            <li><a href="updateInfos.php"><span class="glyphicon glyphicon-cog"> </span> Alterar Informações</a></li>
 	          </ul>
 	        </li>
-          	<?php } ?>
-	      </ul>
+	        	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	  </div>
 	</nav>
-
-

@@ -3,6 +3,12 @@
 	border: 1px solid #ebebeb;
 	margin:2px;
 	width: 288px;
+	height: 500px;
+	border-radius:10px;
+}
+
+.product:hover{
+	border:1px solid #FF8686;
 }
 
 #sidebar{
